@@ -5,4 +5,5 @@
 # 公開場所
 
 完成したら以下のURLで公開できる。
+
 http://tokiwoousaka.github.io/lang_aptitude_test/
