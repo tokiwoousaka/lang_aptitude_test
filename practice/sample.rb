@@ -26,17 +26,16 @@ end
 
 # 設問集
 all_questions = [
-  #            no  is_goal msg                                                             yes_path no_path 
-  Question.new(1 , false,  "リラックマ好き？",                                             2,        3),
-  Question.new(2 , false,  "ピカチュウよりベトベトンのほうが可愛いと思う",                 4,        5),
-  Question.new(3 , false,  "お茶の子さいさい？",                                           5,        6),
-  Question.new(4 , false,  "名探偵？",                                                     7,        8),
-  Question.new(5 , false,  "マリオなんかよりも土管を愛している",                           8,        9),
-  Question.new(6 , false,  "実はFカップです",                                              9,       10),
-  Question.new(7 , false,  "あなたはコナン君タイプです　偶然にも居合わせないでください。", 0,        0),
-  Question.new(8 , true ,  "あなたはモグラタイプです　太陽に焼かれて死ねっ！",             0,        0),
-  Question.new(9 , true ,  "あなたはゴルゴ１３タイプです　依頼された仕事は必ずこなします", 0,        0),
-  Question.new(10, true ,  "あなたはMr2.ボン=クレータイプです　オカマウェイ！",            0,        0)]
+  Question.new(1 , false,  "リラックマ好き？", 2, 3),
+  Question.new(2 , false,  "ピカチュウよりベトベトンのほうが可愛いと思う", 4, 5),
+  Question.new(3 , false,  "お茶の子さいさい？", 5, 6),
+  Question.new(4 , false,  "名探偵？", 7, 8),
+  Question.new(5 , false,  "マリオなんかよりも土管を愛している", 8, 9),
+  Question.new(6 , false,  "実はFカップです", 9, 10),
+  Question.new(7 , false,  "あなたはコナン君タイプです　偶然にも居合わせないでください。", 0, 0),
+  Question.new(8 , true ,  "あなたはモグラタイプです　太陽に焼かれて死ねっ！", 0, 0),
+  Question.new(9 , true ,  "あなたはゴルゴ１３タイプです　依頼された仕事は必ずこなします", 0, 0),
+  Question.new(10, true ,  "あなたはMr2.ボン=クレータイプです　オカマウェイ！", 0, 0)]
 
 ####################################################################################################
 # 処理ここから
