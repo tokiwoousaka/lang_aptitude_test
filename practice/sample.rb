@@ -33,7 +33,7 @@ all_questions = [
   Question.new(4 , false,  "名探偵？", 7, 8),
   Question.new(5 , false,  "マリオなんかよりも土管を愛している", 8, 9),
   Question.new(6 , false,  "実はFカップです", 9, 10),
-  Question.new(7 , false,  "あなたはコナン君タイプです　偶然にも居合わせないでください。", 0, 0),
+  Question.new(7 , true ,  "あなたはコナン君タイプです　偶然にも居合わせないでください。", 0, 0),
   Question.new(8 , true ,  "あなたはモグラタイプです　太陽に焼かれて死ねっ！", 0, 0),
   Question.new(9 , true ,  "あなたはゴルゴ１３タイプです　依頼された仕事は必ずこなします", 0, 0),
   Question.new(10, true ,  "あなたはMr2.ボン=クレータイプです　オカマウェイ！", 0, 0)]
@@ -50,7 +50,6 @@ question = all_questions.select{|q| q.no == q_idx }[0]
 
 # quitにtrueが代入されるまで繰り返し
 while !quit
-
   # 設問の表示
   print "--------------------------------------------------------------------------------\n"
   print question.msg 
@@ -65,15 +64,12 @@ while !quit
 
   # ゴールなら結果を表示してループ終了
   if question.is_goal
-
     # 結果を出力
     print "--------------------------------------------------------------------------------\n"
     print question.msg
 
     # ループ終了
     quit = true
-
   end
-
 end
 
