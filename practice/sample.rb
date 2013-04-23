@@ -6,6 +6,9 @@
 #
 ###################################################################################################
 
+# 使用するライブラリの読み込み
+require 'readline'
+
 # 設問を保持するクラス／てか構造体替わり
 # Structとかいうのもあるらしいけど書いちゃったからこれで
 class Question
@@ -52,10 +55,10 @@ while !quit
   # 設問の表示
   print "--------------------------------------------------------------------------------\n"
   print question.msg 
-  print "\nはい   - y\nいいえ - n\n> "
+  print "\nはい   - y\nいいえ - n\n"
 
   # 回答取得
-  ans = gets.chomp
+  ans = Readline.readline('> ')
 
   # 次の設問を決定
   q_idx = ans == "y" ? question.yes_path : question.no_path
