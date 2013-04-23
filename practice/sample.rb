@@ -24,7 +24,8 @@ class Question
 
   # アクセサ定義
   attr_reader :no, :is_goal, :msg, :yes_path, :no_path
-
+  # goal? を is_goal のエイリアスとする
+  alias_method :goal?, :is_goal
 end
 
 # 設問集
@@ -68,7 +69,7 @@ while !quit
   question = all_questions.select{|q| q.no == q_idx }[0]
 
   # ゴールなら結果を表示してループ終了
-  if question.is_goal
+  if question.goal?
     # 結果を出力
     print "--------------------------------------------------------------------------------\n"
     print question.msg
