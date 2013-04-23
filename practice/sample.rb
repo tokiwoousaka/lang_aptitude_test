@@ -23,7 +23,7 @@ class Question
   end
 
   # アクセサ定義
-  attr_accessor :no, :is_goal, :msg, :yes_path, :no_path
+  attr_reader :no, :is_goal, :msg, :yes_path, :no_path
 
 end
 
