@@ -61,7 +61,10 @@ while !quit
   ans = Readline.readline('> ')
 
   # 次の設問を決定
-  q_idx = ans == "y" ? question.yes_path : question.no_path
+  q_idx = case ans
+          when /^[yY]/ then question.yes_path
+          else question.no_path
+          end
   question = all_questions.select{|q| q.no == q_idx }[0]
 
   # ゴールなら結果を表示してループ終了
