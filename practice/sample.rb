@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 ###################################################################################################
 #
@@ -6,6 +5,9 @@
 # Rubyマトモに書くの初めてだから、テキトーな事しててもゴメンしてちょ
 #
 ###################################################################################################
+
+# 使用するライブラリの読み込み
+require 'readline'
 
 # 設問を保持するクラス／てか構造体替わり
 # Structとかいうのもあるらしいけど書いちゃったからこれで
@@ -21,8 +23,9 @@ class Question
   end
 
   # アクセサ定義
-  attr_accessor :no, :is_goal, :msg, :yes_path, :no_path
-
+  attr_reader :no, :is_goal, :msg, :yes_path, :no_path
+  # goal? を is_goal のエイリアスとする
+  alias_method :goal?, :is_goal
 end
 
 # 設問集
@@ -46,24 +49,27 @@ q_idx = 1
 quit = false
 
 # 最初の設問を取り出す
-question = all_questions.select{|q| q.no == q_idx }[0]
+question = all_questions.find{|q| q.no == q_idx }
 
 # quitにtrueが代入されるまで繰り返し
 while !quit
   # 設問の表示
   print "--------------------------------------------------------------------------------\n"
   print question.msg 
-  print "\nはい   - y\nいいえ - n\n> "
+  print "\nはい   - y\nいいえ - n\n"
 
   # 回答取得
-  ans = gets.chomp
+  ans = Readline.readline('> ')
 
   # 次の設問を決定
-  q_idx = ans == "y" ? question.yes_path : question.no_path
-  question = all_questions.select{|q| q.no == q_idx }[0]
+  q_idx = case ans
+          when /^[yY]/ then question.yes_path
+          else question.no_path
+          end
+  question = all_questions.find{|q| q.no == q_idx }
 
   # ゴールなら結果を表示してループ終了
-  if question.is_goal
+  if question.goal?
     # 結果を出力
     print "--------------------------------------------------------------------------------\n"
     print question.msg
