@@ -49,7 +49,7 @@ q_idx = 1
 quit = false
 
 # 最初の設問を取り出す
-question = all_questions.select{|q| q.no == q_idx }[0]
+question = all_questions.find{|q| q.no == q_idx }
 
 # quitにtrueが代入されるまで繰り返し
 while !quit
@@ -66,7 +66,7 @@ while !quit
           when /^[yY]/ then question.yes_path
           else question.no_path
           end
-  question = all_questions.select{|q| q.no == q_idx }[0]
+  question = all_questions.find{|q| q.no == q_idx }
 
   # ゴールなら結果を表示してループ終了
   if question.goal?
