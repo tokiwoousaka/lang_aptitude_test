@@ -7,7 +7,7 @@
 ###################################################################################################
 
 # 新規作成書き込みモードでf1.txtというファイルを作成する
-File::open("f1.txt", "w") do |f|
+File::open("f1.txt", "w+") do |f|
   # "Ruby Haskell Java Coq" という文字列をファイルに書き込み
   f.write("Ruby Haskell Java Coq")
 end
@@ -18,7 +18,7 @@ File::open("f1.txt", "r") do |f|
   str = f.read
 
   # 新たにf2.txtを作成
-  File::open("f2.txt", "w") do |g|
+  File::open("f2.txt", "w+") do |g|
     # 読み込んだf1.txtのデータから、"Java" を "Scala" に置換して書き込み
     g.write(str.gsub("Java", "Scala"))
   end
