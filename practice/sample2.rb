@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 ###################################################################################################
 #
@@ -7,18 +6,18 @@
 ###################################################################################################
 
 # 新規作成書き込みモードでf1.txtというファイルを作成する
-File::open("f1.txt", "w+") do |f|
+open("f1.txt", "w+") do |f|
   # "Ruby Haskell Java Coq" という文字列をファイルに書き込み
   f.write("Ruby Haskell Java Coq")
 end
 
 # 今作ったf1.txtを読み込みモードで開く
-File::open("f1.txt", "r") do |f|
+open("f1.txt", "r") do |f|
   # ファイルのデータを読み込む
   str = f.read
 
   # 新たにf2.txtを作成
-  File::open("f2.txt", "w+") do |g|
+  open("f2.txt", "w+") do |g|
     # 読み込んだf1.txtのデータから、"Java" を "Scala" に置換して書き込み
     g.write(str.gsub("Java", "Scala"))
   end
